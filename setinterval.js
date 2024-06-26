@@ -12,29 +12,29 @@
 
 
 // play, stop 버튼 추가
-const bannerdata = [
-    "./banner2/1.png",
-    "./banner/0.png",
-    "./banner2/membership.png"
-];
+// const bannerdata = [
+//     "./banner2/1.png",
+//     "./banner/0.png",
+//     "./banner2/membership.png"
+// ];
 
-let num = 0;
-document.querySelector("#bannerimg").setAttribute("src",bannerdata[num])
+// let num = 0;
+// document.querySelector("#bannerimg").setAttribute("src",bannerdata[num])
 
-document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
+// document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
 
-    const autobanner = setInterval(function(){
-    num++;
-    num %= bannerdata.length;
-    document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
-    document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) 
-}, 3000)
+//     const autobanner = setInterval(function(){
+//     num++;
+//     num %= bannerdata.length;
+//     document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
+//     document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) 
+// }, 3000)
 
 
-document.querySelector(".bannerwrap button").addEventListener('click', function(){
-    clearInterval(autobanner);
-    this.innerHTML = "Play"
-});
+// document.querySelector(".bannerwrap button").addEventListener('click', function(){
+//     clearInterval(autobanner);
+//     this.innerHTML = "Play"
+// });
 
 // ---------------------------------------------------------------------------------------- //
 
@@ -42,9 +42,9 @@ document.querySelector(".bannerwrap button").addEventListener('click', function(
 // setinterval 최적화 버전
 
 const bannerData = [
-    "/banner2/1.png",
-    "/banner/0.png",
-    "/banner2/membership.png"
+    "./banner2/1.png",
+    "./banner/0.png",
+    "./banner2/membership.png"
 ];
 
 let num = 0;
@@ -69,7 +69,7 @@ let autoBanner = startAutoBanner();
 
 bannerButton.addEventListener('click', function() {
     clearInterval(autoBanner);
-    bannerButton.innerHTML = "PLAY";
+    bannerButton.innerHTML = "Play";
 });
 
 updateBanner(); // 초기 배너 설정
