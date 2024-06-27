@@ -20,6 +20,7 @@
         }
         .banner li{ 
             /* swiper - slide */
+            list-style: none;
             
             height:600px;
         }
@@ -39,21 +40,17 @@
         }
         .btns button {
             border: 0;
-            font-size: 0;
-            line-height: 0;
+            color: white;
             display: block;
-            width: 20px;
-            height: 20px;
-            border-radius: 10px;
             background-color: #666;
+            padding: 0 15px;
             margin: 0 10px;
             cursor: pointer;
+            transition: 0.5s;
         }
         .btns button.on{
             background-color: red;
             cursor: default;
-            width: 50px;
-            transition: 0.5s;
         }
         
     </style>
@@ -61,9 +58,9 @@
 <body>
     <div class="banner">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li data-msg="초특가이벤트"></li>
+            <li data-msg="멤버쉽안내"></li>
+            <li data-msg="구독신청"></li>
         </ul>
         <div class="btns">
             <!-- <button class="on">1</button>
@@ -106,18 +103,26 @@
             
 
             // for를 사용하는 식
-            for(let x =0; x < lis; x++){
-                btnsbutton += `<button>${x + 1}</button>`;
+            // for(let x =0; x < lis; x++){
+            //     btnsbutton += `<button>${x + 1}</button>`;
                 
-            }
+            // }
+
+            // each로 해야만 할 때 사용하는 식
+            $(".banner li").each(function(idx, ele){
+                btnsbutton +=`<button>${$(this).data("msg")}</button>`;
+            })
 
             $(".btns").html(btnsbutton)
 
-        $(".btns button").on('click', function(){
-                $(".banner ul").css("marginLeft", -aniw * $(this).index() );
-                $(this).addClass("on").siblings().removeClass('on')
+            $(".btns button").eq(0).addClass("on");
+           
 
-        })
+            $(".btns button").on('click', function(){
+                    $(".banner ul").css("marginLeft", -aniw * $(this).index() );
+                    $(this).addClass("on").siblings().removeClass('on')
+
+            })
 
     </script>
 </body>
