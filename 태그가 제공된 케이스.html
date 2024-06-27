@@ -15,11 +15,12 @@
         .banner ul{
             /* swiper - wrapper */
             display: flex;
-            width: calc(100vw * 3);
+            transition: 0.5s;
+            
         }
         .banner li{ 
             /* swiper - slide */
-            width:100vw;
+            
             height:600px;
         }
         .banner li:nth-child(1){
@@ -65,8 +66,17 @@
         // })
 // ----------------상단 하단 식 모두 같은 값을 보여준다 --------------- //
 
+            // index(), width(), height(), $(this), attr()
+            const aniw = $(document).width(); // 숫자로 출력
+            // const aniw = $(document).css('width'); // 문자로 출력
+            // const intermargin = parseInt($(".gnb").css("margin=left")); // parseInt를 사용하여 100px(문자) 인것을 100(숫자)로 가져옴
+            
+            const lis = $(".banner li").length;
+            $(".banner li").width(aniw);
+            $(".banner ul").width(aniw * lis);
+
         $(".btns button").on('click', function(){
-                alert($(this).index()) 
+                $(".banner ul").css("marginLeft", -aniw * $(this).index() )
         })
 
     </script>
