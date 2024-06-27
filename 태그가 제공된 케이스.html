@@ -113,9 +113,11 @@
                 btnsbutton +=`<button>${$(this).data("msg")}</button>`;
             })
 
+            
+
             $(".btns").html(btnsbutton)
 
-            $(".btns button").eq(0).addClass("on");
+            // $(".btns button").eq(0).addClass("on");
            
 
             $(".btns button").on('click', function(){
@@ -123,6 +125,20 @@
                     $(this).addClass("on").siblings().removeClass('on')
 
             })
+
+
+            if(count > 0 ){
+                const mynum = "있다"
+            }else{
+                const mynum = "없다"
+            }
+
+            const mynum = count < 0 ? "있다" : "없다"
+
+            // 18세 이상이면 성인 아니면 미성년자
+            const age = $("input").val(); // val 메서드는 폼태그내의 태그들 (input, button, select, textarea)에만 사용할 수 있다
+            const guest = age > 18 ? "성인":"미성년자"
+
 
     </script>
 </body>
