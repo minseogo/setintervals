@@ -99,14 +99,17 @@
             let btnsbutton = "";
 
             // each를 사용하는 식
-            $(".banner li").each(function(idx, ele){
-                console.log(idx, ele); // 순번, 객체
-                btnsbutton +=`<button>${idx + 1}</button>`
-            })
+            // $(".banner li").each(function(idx, ele){
+            //     console.log(idx, ele); // 순번, 객체
+            //     btnsbutton +=`<button>${idx + 1}</button>`
+            // })
             
 
             // for를 사용하는 식
-
+            for(let x =0; x < lis; x++){
+                btnsbutton += `<button>${x + 1}</button>`;
+                
+            }
 
             $(".btns").html(btnsbutton)
 
