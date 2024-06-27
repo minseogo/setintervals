@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      
+    </style>
+</head>
+<body>
+    <ul class="notice">
+        <li>텍스트</li>
+        <li>텍스트</li>
+        <li>텍스트</li>
+        <li>텍스트</li>
+        <li>텍스트</li>
+    </ul>
+    <a href="" id="mypage">마이페이지</a>
+
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <script>
+
+        // li가 5개인 태그에서 마지막 li만 border-bottom이라는 클래스를 적용하라
+       
+    //     const totalli = $(".notice li").length;
+
+    //    $(".notice li").each(function(){
+
+    //      if($(this).index() === totalli - 1) {
+    //         $(this).addClass("border-bottom");
+    //         }
+    //     })
+
+// ---------------------------------------------------------------------------- //
+
+// li 모두 border-bottom이라는 클래스와 mb-3 를 적용하라, 단 마지막 li만 mb-3 적용하지 말것
+
+    //     const totalli = $(".notice li").length;
+
+    //     $(".notice li").each(function(){
+    //     const licls = $(this).index() === totalli -1 ? "border-bottom" : "border-bottom mb-3";
+    //     $(this).addClass(licls);
+
+    //    })
+
+// ---------------------------------------------------------------------------- //
+
+// 회원인 경우에는 mypage로 링크가 가고 나머지는 login으로 링크를 넘겨라
+
+    const mb = "회원";
+    const pagelink = mb =="회원" ? "mypage.html" : "login.html";
+    // const pagelink = mb !="회원" ? "login.html" : "mypage.html";
+    $("#mypage").attr('href', pagelink);
+    
+    </script>
+</body>
+</html>
