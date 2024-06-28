@@ -49,13 +49,13 @@
 
         // 마이페이지가 네이버로 노출되고 클릭 새창으로 열리기 -> 첫번째 식이 유지보수가 잘되는 식이다.
 
-        const inserdb = {
-            "href": "http://www.naver.com",
-            "target": "_blank"
+        const inserdb = { // inserdb라는 상수를 선언하고 객체를 할당한다
+            "href": "http://www.naver.com", // 링크의 목적지를 지정한다 값은 "http://www.naver.com"이다
+            "target": "_blank" // 링크를 클릭했을 때 새 탭에서 열리도록 지정한다
         }
-        $("#mypage")
-        .attr(inserdb)
-        .html("네이버")
+        $("#mypage") // id가 mypage인 HTML 요소를 선택한다
+        .attr(inserdb) // attr 메서드는 HTML 요소의 속성을 설정한다
+        .html("네이버") // html 메서드는 선택한 요소의 페이지에 노출되는 HTML 이름을 설정한다 
 
 // ------------------------------- //
 
