@@ -13,6 +13,9 @@
     </style>
 </head>
 <body>
+
+    <!-- notice li, .notice > li, ul .notice > li, body ul .notice > li -->
+
     <ul class="notice">
         <li>텍스트</li>
         <li>텍스트</li>
@@ -27,39 +30,42 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
     <script>
+        // 화면이 열리자마자 두번째 li만 d-none 클래스 추가하기
 
-        // li가 5개인 태그에서 마지막 li만 border-bottom이라는 클래스를 적용하라
-       
-    //     const totalli = $(".notice li").length;
+        // const lis = $(".notice li").length
+        // $(".notice li").eq(1).addClass("d-none"); // 가장 간단한 식
+        // $(".notice li:nth-child(2)").addClass("d-none"); // nth-child를 사용한 식
+        // $(".notice li:first-child").next().addclass("d-none"); // first-child를 사용한 식
+        // $(".notice li:first-child + li").addclass("d-none"); // +li를 사용한 식
+        // $(".notice li + li").addclass("d-none") ; // 첫번째 빼고 전부 d-none 클래스가 추가된다
+        // $(".notice li:not(:first-child)").addclass("d-none") ; // 첫번째 빼고 전부 d-none 클래스가 추가된다
 
-    //    $(".notice li").each(function(){
+    // ----------------------------------------------------------------------------------------------------------- //
 
-    //      if($(this).index() === totalli - 1) {
-    //         $(this).addClass("border-bottom");
-    //         }
-    //     })
+        // const num = 3;
+        // $(`.notice li:nth-child($(num))`).addClass("d-none");
 
-// ---------------------------------------------------------------------------- //
+    // ----------------------------------------------------------------------------------------------------------- //
 
-// li 모두 border-bottom이라는 클래스와 mb-3 를 적용하라, 단 마지막 li만 mb-3 적용하지 말것
+        // 마이페이지가 네이버로 노출되고 클릭 새창으로 열리기 -> 첫번째 식이 유지보수가 잘되는 식이다.
 
-    //     const totalli = $(".notice li").length;
+        const inserdb = {
+            "href": "http://www.naver.com",
+            "target": "_blank"
+        }
+        $("#mypage")
+        .attr(inserdb)
+        .html("네이버")
 
-    //     $(".notice li").each(function(){
-    //     const licls = $(this).index() === totalli -1 ? "border-bottom" : "border-bottom mb-3";
-    //     $(this).addClass(licls);
+// ------------------------------- //
 
-    //    })
+        // $("#mypage")
+        // .attr({
+        //     "href": "http://www.naver.com",
+        //     "target": "_blank"
+        // })
+        // .html("네이버")
 
-// ---------------------------------------------------------------------------- //
-
-// 회원인 경우에는 mypage로 링크가 가고 나머지는 login으로 링크를 넘겨라
-
-    const mb = "회원";
-    const pagelink = mb =="회원" ? "mypage.html" : "login.html";
-    // const pagelink = mb !="회원" ? "login.html" : "mypage.html";
-    $("#mypage").attr('href', pagelink);
-    
     </script>
 </body>
 </html>
