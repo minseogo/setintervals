@@ -9,7 +9,9 @@
             margin: 0;
             padding: 0;
         }
-      
+      .on{
+        color: red;
+      }
     </style>
 </head>
 <body>
@@ -49,15 +51,15 @@
 
         // 마이페이지가 네이버로 노출되고 클릭 새창으로 열리기 -> 첫번째 식이 유지보수가 잘되는 식이다.
 
-        const inserdb = { // inserdb라는 상수를 선언하고 객체를 할당한다
-            "href": "http://www.naver.com", // 링크의 목적지를 지정한다 값은 "http://www.naver.com"이다
-            "target": "_blank" // 링크를 클릭했을 때 새 탭에서 열리도록 지정한다
-        }
-        $("#mypage") // id가 mypage인 HTML 요소를 선택한다
-        .attr(inserdb) // attr 메서드는 HTML 요소의 속성을 설정한다
-        .html("네이버") // html 메서드는 선택한 요소의 페이지에 노출되는 HTML 이름을 설정한다 
+        // const inserdb = { // inserdb라는 상수를 선언하고 객체를 할당한다
+        //     "href": "http://www.naver.com", // 링크의 목적지를 지정한다 값은 "http://www.naver.com"이다
+        //     "target": "_blank" // 링크를 클릭했을 때 새 탭에서 열리도록 지정한다
+        // }
+        // $("#mypage") // id가 mypage인 HTML 요소를 선택한다
+        // .attr(inserdb) // attr 메서드는 HTML 요소의 속성을 설정한다
+        // .html("네이버") // html 메서드는 선택한 요소의 페이지에 노출되는 HTML 이름을 설정한다 
 
-// ------------------------------- //
+    // ------------------------------- //
 
         // $("#mypage")
         // .attr({
@@ -65,6 +67,22 @@
         //     "target": "_blank"
         // })
         // .html("네이버")
+
+    // ----------------------------------------------------------------------------------------------------------- //
+
+        // 변수 사용하여 첫번째 li만 on 클래스 추가하기
+
+        let count = 0; // 순환을 위한 변수
+        const lis = $(".notice li").length; // <li> 요소의 총 개수
+        $(".notice li").eq(count).addClass("on"); // 첫 번째 <li>에 'on' 클래스 추가
+
+        setInterval(function(){
+            count++; // count를 계속해서 1 증가
+            count = count % lis // count를 <li> 총 개수로 나눈 나머지 값으로 설정 (순환)
+            $(".notice li").eq(count).addClass("on").siblings().removeClass("on"); // 현재 <li>에 'on' 클래스 추가하고 나머지에서 제거      
+        }, 1000) // 1000ms (1초)마다 함수 실행
+            
+        
 
     </script>
 </body>
